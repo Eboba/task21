@@ -2,9 +2,10 @@ package main
 
 import "fmt"
 
-func office(A func(int, int) int) int {
-	defer fmt.Println(A(10, 5))
-	return 1
+func office(A func(int, int) int) (result int) {
+	defer func() {
+		result = A(5, 4)
+	}()
 }
 
 func main() {
@@ -18,7 +19,7 @@ func main() {
 	b := func(x, y int) int { return x * y }
 	c := func(x, y int) int { return x / y }
 
-	defer office(a)
-	defer office(b)
-	defer office(c)
+	fmt.Println(office(a))
+	fmt.Println(office(b))
+	fmt.Println(office(c))
 }
