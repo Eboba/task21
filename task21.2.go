@@ -4,8 +4,9 @@ import "fmt"
 
 func office(A func(int, int) int) (result int) {
 	defer func() {
-		result = A(5, 4)
+		result = A(10, 5)
 	}()
+	return 0
 }
 
 func main() {
