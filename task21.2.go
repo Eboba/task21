@@ -16,11 +16,7 @@ func main() {
 	fmt.Println("Задание 2. Анонимные функции")
 	fmt.Println("------------")
 
-	a := func(x, y int) int { return x + y }
-	b := func(x, y int) int { return x * y }
-	c := func(x, y int) int { return x / y }
-
-	fmt.Println(office(a))
-	fmt.Println(office(b))
-	fmt.Println(office(c))
+	fmt.Println(office(func(x, y int) int { return x + y }))
+	fmt.Println(office(func(x, y int) int { return x * y }))
+	fmt.Println(office(func(x, y int) int { return x / y }))
 }
